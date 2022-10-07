@@ -1,0 +1,1887 @@
+{
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.4.json",
+  "runs": [
+    {
+      "columnKind": "utf16CodeUnits",
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "results": [
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Splash.OnVisible"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Splash.OnVisible",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 12,
+                  "charOffset": 2062,
+                  "snippet": {
+                    "text": "\"StaffEmail\""
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnVisible",
+                "module": "Splash",
+                "type": "Splash"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "StaffEmail"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrColDNE-Name",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Splash.OnVisible"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Splash.OnVisible",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 281,
+                  "charOffset": 1910,
+                  "snippet": {
+                    "text": "ShowColumns(\r\n        Filter(\r\n            MatrixNetwork,\r\n            StaffEmail = varUser.Email\r\n        ),\r\n        \"ID\",\r\n        \"Title\",\r\n        \"StaffEmail\",\r\n        \"UserLevel\",\r\n        \"TargetUserLevel\",\r\n        \"DeveloperLevel\",\r\n        \"TargetDeveloperLevel\"\r\n    )"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnVisible",
+                "module": "Splash",
+                "type": "Splash"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "ShowColumns"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidArgs-Func",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "My_Profile.gal_my_skills.dd_user_level.OnChange"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "My_Profile.gal_my_skills.dd_user_level.OnChange",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 12,
+                  "charOffset": 530,
+                  "snippet": {
+                    "text": "\"StaffEmail\""
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnChange",
+                "module": "My_Profile",
+                "type": "My_Profile.gal_my_skills.dd_user_level"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "StaffEmail"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrColDNE-Name",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "My_Profile.gal_my_skills.dd_user_level.OnChange"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "My_Profile.gal_my_skills.dd_user_level.OnChange",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 157,
+                  "charOffset": 456,
+                  "snippet": {
+                    "text": "ShowColumns(Filter(MatrixNetwork,StaffEmail = varUser.Email),\"ID\",\"Title\",\"StaffEmail\",\"UserLevel\",\"TargetUserLevel\",\"DeveloperLevel\",\"TargetDeveloperLevel\")"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnChange",
+                "module": "My_Profile",
+                "type": "My_Profile.gal_my_skills.dd_user_level"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "ShowColumns"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidArgs-Func",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "My_Profile.gal_my_skills.dd_target_user_level.OnChange"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "My_Profile.gal_my_skills.dd_target_user_level.OnChange",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 12,
+                  "charOffset": 556,
+                  "snippet": {
+                    "text": "\"StaffEmail\""
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnChange",
+                "module": "My_Profile",
+                "type": "My_Profile.gal_my_skills.dd_target_user_level"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "StaffEmail"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrColDNE-Name",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "My_Profile.gal_my_skills.dd_target_user_level.OnChange"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "My_Profile.gal_my_skills.dd_target_user_level.OnChange",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 157,
+                  "charOffset": 482,
+                  "snippet": {
+                    "text": "ShowColumns(Filter(MatrixNetwork,StaffEmail = varUser.Email),\"ID\",\"Title\",\"StaffEmail\",\"UserLevel\",\"TargetUserLevel\",\"DeveloperLevel\",\"TargetDeveloperLevel\")"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnChange",
+                "module": "My_Profile",
+                "type": "My_Profile.gal_my_skills.dd_target_user_level"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "ShowColumns"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidArgs-Func",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "My_Profile.gal_my_skills.dd_dev_level.OnChange"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "My_Profile.gal_my_skills.dd_dev_level.OnChange",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 12,
+                  "charOffset": 536,
+                  "snippet": {
+                    "text": "\"StaffEmail\""
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnChange",
+                "module": "My_Profile",
+                "type": "My_Profile.gal_my_skills.dd_dev_level"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "StaffEmail"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrColDNE-Name",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "My_Profile.gal_my_skills.dd_dev_level.OnChange"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "My_Profile.gal_my_skills.dd_dev_level.OnChange",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 157,
+                  "charOffset": 462,
+                  "snippet": {
+                    "text": "ShowColumns(Filter(MatrixNetwork,StaffEmail = varUser.Email),\"ID\",\"Title\",\"StaffEmail\",\"UserLevel\",\"TargetUserLevel\",\"DeveloperLevel\",\"TargetDeveloperLevel\")"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnChange",
+                "module": "My_Profile",
+                "type": "My_Profile.gal_my_skills.dd_dev_level"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "ShowColumns"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidArgs-Func",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "My_Profile.gal_my_skills.dd_target_dev_level.OnChange"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "My_Profile.gal_my_skills.dd_target_dev_level.OnChange",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 12,
+                  "charOffset": 562,
+                  "snippet": {
+                    "text": "\"StaffEmail\""
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnChange",
+                "module": "My_Profile",
+                "type": "My_Profile.gal_my_skills.dd_target_dev_level"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "StaffEmail"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrColDNE-Name",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "My_Profile.gal_my_skills.dd_target_dev_level.OnChange"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "My_Profile.gal_my_skills.dd_target_dev_level.OnChange",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 157,
+                  "charOffset": 488,
+                  "snippet": {
+                    "text": "ShowColumns(Filter(MatrixNetwork,StaffEmail = varUser.Email),\"ID\",\"Title\",\"StaffEmail\",\"UserLevel\",\"TargetUserLevel\",\"DeveloperLevel\",\"TargetDeveloperLevel\")"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnChange",
+                "module": "My_Profile",
+                "type": "My_Profile.gal_my_skills.dd_target_dev_level"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "ShowColumns"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidArgs-Func",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Request_Support.btn_add_search.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Request_Support.btn_add_search.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 12,
+                  "charOffset": 1170,
+                  "snippet": {
+                    "text": "\"StaffEmail\""
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "Request_Support",
+                "type": "Request_Support.btn_add_search"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "StaffEmail"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrColDNE-Name",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Request_Support.btn_add_search.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Request_Support.btn_add_search.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 356,
+                  "charOffset": 906,
+                  "snippet": {
+                    "text": "ShowColumns(\r\n                Filter(\r\n                    MatrixNetwork,\r\n                    Title = dd_application_1.Selected.Application,\r\n                    UserLevel = dd_level_1.Selected.Title\r\n                ),\r\n                \"Title\",\r\n                \"StaffEmail\",\r\n                \"UserLevel\",\r\n                \"DeveloperLevel\"\r\n            )"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "Request_Support",
+                "type": "Request_Support.btn_add_search"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "ShowColumns"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidArgs-Func",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Request_Support.btn_add_search.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Request_Support.btn_add_search.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 12,
+                  "charOffset": 1662,
+                  "snippet": {
+                    "text": "\"StaffEmail\""
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "Request_Support",
+                "type": "Request_Support.btn_add_search"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "StaffEmail"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrColDNE-Name",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Request_Support.btn_add_search.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Request_Support.btn_add_search.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 361,
+                  "charOffset": 1393,
+                  "snippet": {
+                    "text": "ShowColumns(\r\n                Filter(\r\n                    MatrixNetwork,\r\n                    Title = dd_application_1.Selected.Application,\r\n                    DeveloperLevel = dd_level_1.Selected.Title\r\n                ),\r\n                \"Title\",\r\n                \"StaffEmail\",\r\n                \"UserLevel\",\r\n                \"DeveloperLevel\"\r\n            )"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "Request_Support",
+                "type": "Request_Support.btn_add_search"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "ShowColumns"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidArgs-Func",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Request_Support.btn_add_search.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Request_Support.btn_add_search.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 10,
+                  "charOffset": 2036,
+                  "snippet": {
+                    "text": "StaffEmail"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "Request_Support",
+                "type": "Request_Support.btn_add_search"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "StaffEmail"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Request_Support.btn_add_search.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Request_Support.btn_add_search.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 81,
+                  "charOffset": 1980,
+                  "snippet": {
+                    "text": "Distinct(\r\n                col_search,\r\n                StaffEmail\r\n            )"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "Request_Support",
+                "type": "Request_Support.btn_add_search"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Distinct"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidArgs-Func",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Request_Support.btn_add_search.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Request_Support.btn_add_search.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 2189,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "Request_Support",
+                "type": "Request_Support.btn_add_search"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Text",
+              "Error"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Request_Support.btn_add_search.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Request_Support.btn_add_search.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 2347,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "Request_Support",
+                "type": "Request_Support.btn_add_search"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Text",
+              "Error"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Request_Support.btn_add_search.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Request_Support.btn_add_search.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 10,
+                  "charOffset": 2497,
+                  "snippet": {
+                    "text": "StaffEmail"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "Request_Support",
+                "type": "Request_Support.btn_add_search"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "StaffEmail"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Request_Support.btn_add_search.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Request_Support.btn_add_search.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 2495,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "Request_Support",
+                "type": "Request_Support.btn_add_search"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Error",
+              "Error"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Request_Support.gal_list_of_searches.ico_delete_search.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Request_Support.gal_list_of_searches.ico_delete_search.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 10,
+                  "charOffset": 602,
+                  "snippet": {
+                    "text": "StaffEmail"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "Request_Support",
+                "type": "Request_Support.gal_list_of_searches.ico_delete_search"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "StaffEmail"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Request_Support.gal_list_of_searches.ico_delete_search.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Request_Support.gal_list_of_searches.ico_delete_search.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 81,
+                  "charOffset": 546,
+                  "snippet": {
+                    "text": "Distinct(\r\n                col_search,\r\n                StaffEmail\r\n            )"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "Request_Support",
+                "type": "Request_Support.gal_list_of_searches.ico_delete_search"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Distinct"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidArgs-Func",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Request_Support.gal_list_of_searches.ico_delete_search.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Request_Support.gal_list_of_searches.ico_delete_search.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 755,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "Request_Support",
+                "type": "Request_Support.gal_list_of_searches.ico_delete_search"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Text",
+              "Error"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Request_Support.gal_list_of_searches.ico_delete_search.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Request_Support.gal_list_of_searches.ico_delete_search.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 913,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "Request_Support",
+                "type": "Request_Support.gal_list_of_searches.ico_delete_search"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Text",
+              "Error"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Request_Support.gal_list_of_searches.ico_delete_search.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Request_Support.gal_list_of_searches.ico_delete_search.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 10,
+                  "charOffset": 998,
+                  "snippet": {
+                    "text": "StaffEmail"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "Request_Support",
+                "type": "Request_Support.gal_list_of_searches.ico_delete_search"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "StaffEmail"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Request_Support.gal_list_of_searches.ico_delete_search.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Request_Support.gal_list_of_searches.ico_delete_search.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 996,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "Request_Support",
+                "type": "Request_Support.gal_list_of_searches.ico_delete_search"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Error",
+              "Error"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Request_Support.gal_search_staff.Items"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Request_Support.gal_search_staff.Items",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 294,
+                  "charOffset": 0,
+                  "snippet": {
+                    "text": "SortByColumns(\r\n    Filter(\r\n        col_unique_staff,\r\n        dd_country.Selected.Result = Blank() Or Country = dd_country.Selected.Result,\r\n        dd_bu.Selected.Result = Blank() Or BusinessUnit = dd_bu.Selected.Result\r\n    ),\r\n    \"Count\",\r\n    Descending,\r\n    \"Result\",\r\n    Ascending\r\n)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Items",
+                "module": "Request_Support",
+                "type": "Request_Support.gal_search_staff"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "SortByColumns"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidArgs-Func",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Request_Support.gal_search_staff.Items"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Request_Support.gal_search_staff.Items",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 8,
+                  "charOffset": 267,
+                  "snippet": {
+                    "text": "\"Result\""
+                  }
+                }
+              },
+              "properties": {
+                "member": "Items",
+                "module": "Request_Support",
+                "type": "Request_Support.gal_search_staff"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Result",
+              "Count"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrColumnDoesNotExist-Name-Similar",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Request_Support.gal_search_staff.lbl_staff_email.Text"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Request_Support.gal_search_staff.lbl_staff_email.Text",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 7,
+                  "charOffset": 8,
+                  "snippet": {
+                    "text": ".Result"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Text",
+                "module": "Request_Support",
+                "type": "Request_Support.gal_search_staff.lbl_staff_email"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Result"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Request_Support.gal_search_staff.gal_search.Items"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Request_Support.gal_search_staff.gal_search.Items",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 10,
+                  "charOffset": 32,
+                  "snippet": {
+                    "text": "StaffEmail"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Items",
+                "module": "Request_Support",
+                "type": "Request_Support.gal_search_staff.gal_search"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "StaffEmail"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Request_Support.gal_search_staff.gal_search.Items"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Request_Support.gal_search_staff.gal_search.Items",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 7,
+                  "charOffset": 53,
+                  "snippet": {
+                    "text": ".Result"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Items",
+                "module": "Request_Support",
+                "type": "Request_Support.gal_search_staff.gal_search"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Result"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Request_Support.gal_search_staff.gal_search.Items"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Request_Support.gal_search_staff.gal_search.Items",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 43,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "Items",
+                "module": "Request_Support",
+                "type": "Request_Support.gal_search_staff.gal_search"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Error",
+              "Error"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Request_Support.gal_search_staff.Checkbox1.Default"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Request_Support.gal_search_staff.Checkbox1.Default",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 7,
+                  "charOffset": 11,
+                  "snippet": {
+                    "text": ".Result"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Default",
+                "module": "Request_Support",
+                "type": "Request_Support.gal_search_staff.Checkbox1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Result"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Request_Support.gal_search_staff.Checkbox1.OnUncheck"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Request_Support.gal_search_staff.Checkbox1.OnUncheck",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 7,
+                  "charOffset": 45,
+                  "snippet": {
+                    "text": ".Result"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnUncheck",
+                "module": "Request_Support",
+                "type": "Request_Support.gal_search_staff.Checkbox1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Result"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Request_Support.gal_search_staff.Checkbox1.OnUncheck"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Request_Support.gal_search_staff.Checkbox1.OnUncheck",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 35,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnUncheck",
+                "module": "Request_Support",
+                "type": "Request_Support.gal_search_staff.Checkbox1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Text",
+              "Error"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Request_Support.gal_search_staff.Checkbox1.OnCheck"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Request_Support.gal_search_staff.Checkbox1.OnCheck",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 7,
+                  "charOffset": 36,
+                  "snippet": {
+                    "text": ".Result"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnCheck",
+                "module": "Request_Support",
+                "type": "Request_Support.gal_search_staff.Checkbox1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Result"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Request_Support.gal_search_staff.Checkbox1.OnCheck"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Request_Support.gal_search_staff.Checkbox1.OnCheck",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 44,
+                  "charOffset": 0,
+                  "snippet": {
+                    "text": "Collect(col_email_addresses,ThisItem.Result)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnCheck",
+                "module": "Request_Support",
+                "type": "Request_Support.gal_search_staff.Checkbox1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Collect"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidArgs-Func",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Request_Support.gal_search_staff.ico_hide.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Request_Support.gal_search_staff.ico_hide.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 7,
+                  "charOffset": 57,
+                  "snippet": {
+                    "text": ".Result"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "Request_Support",
+                "type": "Request_Support.gal_search_staff.ico_hide"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Result"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Request_Support.gal_search_staff.ico_hide.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Request_Support.gal_search_staff.ico_hide.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 47,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "Request_Support",
+                "type": "Request_Support.gal_search_staff.ico_hide"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Text",
+              "Error"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Request_Support.gal_search_staff.ico_hide.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Request_Support.gal_search_staff.ico_hide.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 10,
+                  "charOffset": 102,
+                  "snippet": {
+                    "text": "StaffEmail"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "Request_Support",
+                "type": "Request_Support.gal_search_staff.ico_hide"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "StaffEmail"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Request_Support.gal_search_staff.ico_hide.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Request_Support.gal_search_staff.ico_hide.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 7,
+                  "charOffset": 123,
+                  "snippet": {
+                    "text": ".Result"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "Request_Support",
+                "type": "Request_Support.gal_search_staff.ico_hide"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Result"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Request_Support.gal_search_staff.ico_hide.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Request_Support.gal_search_staff.ico_hide.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 113,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "Request_Support",
+                "type": "Request_Support.gal_search_staff.ico_hide"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Error",
+              "Error"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Home.frm_profile.Country_DataCard1.DataCardValue1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Home.frm_profile.Country_DataCard1.DataCardValue1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Home",
+                "type": "Home.frm_profile.Country_DataCard1.DataCardValue1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.Wood_logo_white"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.Wood_logo_white",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "Wood_logo_white",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedMediaResources",
+          "ruleIndex": 6
+        }
+      ],
+      "tool": {
+        "driver": {
+          "fullName": "PowerApps app checker",
+          "name": "PowerApps app checker",
+          "rules": [
+            {
+              "id": "app-ErrColDNE-Name",
+              "messageStrings": {
+                "issue": {
+                  "text": "The specified column '{0}' does not exist."
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "level": "High",
+                "primaryCategory": "formula",
+                "whyFix": ""
+              }
+            },
+            {
+              "id": "app-ErrInvalidArgs-Func",
+              "messageStrings": {
+                "issue": {
+                  "text": "The function '{0}' has some invalid arguments."
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "level": "High",
+                "primaryCategory": "formula",
+                "whyFix": ""
+              }
+            },
+            {
+              "id": "app-ErrInvalidName",
+              "messageStrings": {
+                "issue": {
+                  "text": "Name isn't valid. '{0}' isn't recognized."
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "Remove or correct the reference to the name that isn't valid."
+                ],
+                "level": "High",
+                "primaryCategory": "formula",
+                "whyFix": ""
+              }
+            },
+            {
+              "id": "app-ErrIncompatibleTypesForEquality-Left-Right",
+              "messageStrings": {
+                "issue": {
+                  "text": "Incompatible types for comparison. These types can't be compared: {0}, {1}."
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "You might need to convert the value to be the same type, such as converting a date string (e.g., \"12/31/2018\") to a date value.",
+                  "If you’re comparing records or tables, the field or column types must match exactly."
+                ],
+                "level": "High",
+                "primaryCategory": "formula",
+                "whyFix": ""
+              }
+            },
+            {
+              "id": "app-ErrColumnDoesNotExist-Name-Similar",
+              "messageStrings": {
+                "issue": {
+                  "text": "The specified column '{0}' does not exist. The column with the most similar name is '{1}'."
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "level": "High",
+                "primaryCategory": "formula",
+                "whyFix": ""
+              }
+            },
+            {
+              "id": "acc-AccessibleLabelNeeded",
+              "messageStrings": {
+                "issue": {
+                  "text": "Missing accessible label"
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "Edit the accessible label property to describe the item."
+                ],
+                "level": "Medium",
+                "primaryCategory": "accessibility",
+                "whyFix": "If there's no accessible text, people who can’t see the screen won't understand what’s in images and controls."
+              }
+            },
+            {
+              "id": "app-UnusedMediaResources",
+              "messageStrings": {
+                "issue": {
+                  "text": "Unused media files"
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "Remove the unused media file in the Media pane."
+                ],
+                "level": "Medium",
+                "primaryCategory": "performance",
+                "whyFix": "This media file is not referenced by any control formulas so it is not needed. Removing it will improve performance."
+              }
+            }
+          ],
+          "version": "1.326"
+        }
+      }
+    }
+  ],
+  "version": "2.1.0"
+}

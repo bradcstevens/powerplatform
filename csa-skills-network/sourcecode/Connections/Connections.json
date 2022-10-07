@@ -1,0 +1,59 @@
+{
+  "406822ba-aef4-42dd-a7b6-a9aaa9292380": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Office 365 Users",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1563/1.0.1563.2732/office365users/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365users",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "Office365Users"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "406822ba-aef4-42dd-a7b6-a9aaa9292380"
+  },
+  "ac686cf8-4393-4425-a346-864f11894645": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1591/1.0.1591.2961/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline"
+    },
+    "datasets": {
+      "https://mngenv962741.sharepoint.com/sites/PowerApps": {
+        "dataSources": {
+          "MatrixApplication": {
+            "tableName": "e12f8c14-0094-4ab7-9eaf-175e262e3425"
+          },
+          "MatrixLevel": {
+            "tableName": "4e008a33-85d5-49ff-880f-4feea827f679"
+          },
+          "MatrixNetwork": {
+            "tableName": "706bd256-8944-44a3-acd1-68c378a6ecec"
+          },
+          "MatrixRoster": {
+            "tableName": "ffb254d0-39f1-4c9e-b5ff-ebcaafa4d756"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "MatrixApplication",
+      "MatrixLevel",
+      "MatrixNetwork",
+      "MatrixRoster"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "ac686cf8-4393-4425-a346-864f11894645"
+  }
+}
