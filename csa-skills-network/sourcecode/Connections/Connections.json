@@ -34,26 +34,26 @@
     "datasets": {
       "https://mngenv962741.sharepoint.com/sites/PowerApps": {
         "dataSources": {
-          "MatrixApplication": {
+          "CsaSkillsNetworkSkills": {
             "tableName": "e12f8c14-0094-4ab7-9eaf-175e262e3425"
           },
-          "MatrixLevel": {
+          "CsaSkillsNetworkSkillLevels": {
             "tableName": "4e008a33-85d5-49ff-880f-4feea827f679"
           },
-          "MatrixNetwork": {
+          "CsaSkillsNetwork": {
             "tableName": "706bd256-8944-44a3-acd1-68c378a6ecec"
           },
-          "MatrixRoster": {
+          "CsaSkillsNetworkRoster": {
             "tableName": "ffb254d0-39f1-4c9e-b5ff-ebcaafa4d756"
           }
         }
       }
     },
     "dataSources": [
-      "MatrixApplication",
-      "MatrixLevel",
-      "MatrixNetwork",
-      "MatrixRoster"
+      "CsaSkillsNetworkSkills",
+      "CsaSkillsNetworkSkillLevels",
+      "CsaSkillsNetwork",
+      "CsaSkillsNetworkRoster"
     ],
     "dependencies": {},
     "dependents": [],

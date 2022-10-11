@@ -39,7 +39,7 @@
     "EncodeDataset": true,
     "IsSampleData": false,
     "IsWritable": true,
-    "Name": "MatrixApplication",
+    "Name": "CsaSkillsNetworkSkills",
     "Type": "ConnectedDataSourceInfo"
   }
 ]

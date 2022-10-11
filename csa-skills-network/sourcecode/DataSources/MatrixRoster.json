@@ -42,7 +42,7 @@
     "EncodeDataset": true,
     "IsSampleData": false,
     "IsWritable": true,
-    "Name": "MatrixRoster",
+    "Name": "CsaSkillsNetworkRoster",
     "Type": "ConnectedDataSourceInfo"
   }
 ]

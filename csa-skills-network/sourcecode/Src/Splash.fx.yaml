@@ -1,208 +1,207 @@
 Splash As screen:
-    OnVisible: |-
-        =// Set visibility variable to false while script loads.
-        UpdateContext({loc_visible: false});
-        // Create user variable
-        Set(
-            varUser,
-            User()
-        );
-        // If the logged in user doesn't have a record on the Profile list, create one.
-        If(
-            IsBlank(LookUp(
-                MatrixRoster,
-                EmailAddress = varUser.Email
-            ).ID),
-            
-            Patch(
-                MatrixRoster,
-                Defaults(MatrixRoster),
-                {
-                    Title: varUser.FullName,
-                    EmailAddress: varUser.Email,
-                    BusinessUnit: {Value: "not set"},
-                    Country: {Value: "not set"}
-                }
-            )
-        );
-        // Load level choices into a collection.
-        ClearCollect(
-            col_levels,
-            ShowColumns(
-                MatrixLevel,
-                "Title"
-            )
-        );
-        // Load application choices into a collection.
-        ClearCollect(
-            col_applications,
-            RenameColumns(
-                ShowColumns(
-                    MatrixApplication,
-                    "Title",
-                    "Category"
-                ),
-                "Title",
-                "Application"
-            )
-        );
-        // Load application categories into a collection.
-        // Since this is a choice field, need to convert to a text field and then get distinct list.
-        // ClearCollect(col_category,{Category:"<show all>"});
-        ClearCollect(
-            col_category,
-            Sort(
-                RenameColumns(
-                    Distinct(
-                        DropColumns(
-                            AddColumns(
-                                ShowColumns(
-                                    MatrixApplication,
-                                    "Category"
-                                ),
-                                "Type",
-                                Category.Value
-                            ),
-                            "Category"
-                        ),
-                        Type
-                    ),
-                    "Result",
-                    "Category"
-                ),
-                Category,
-                Ascending
-            )
-        );
-        // Load network levels into a collection.
-        ClearCollect(
-            col_network,
-            ShowColumns(
-                Filter(
-                    MatrixNetwork,
-                    StaffEmail = varUser.Email
-                ),
-                "ID",
-                "Title",
-                "StaffEmail",
-                "UserLevel"
-            )
-        );
-        // Load full profile.
-        ClearCollect(
-            col_profile,
-            Ungroup(
-                AddColumns(
-                    col_applications,
-                    "myGroupedColumn",
-                    Filter(
-                        col_network,
-                        Title = col_applications[@Application]
-                    )
-                ),
-                "myGroupedColumn"
-            )
-        );
-        // Populate all blank values in the col_profile with "None"
-        UpdateIf(
-            col_profile,
-            IsBlank(UserLevel),
-            {UserLevel: "None"}
-        );
+  OnVisible: |-
+    =// Set visibility variable to false while script loads.
+    UpdateContext({loc_visible: false});
+    // Create user variable
+    Set(
+        varUser,
+        User()
+    );
+    // If the logged in user doesn't have a record on the Profile list, create one.
+    If(
+        IsBlank(LookUp(
+            CsaSkillsNetworkRoster,
+            EmailAddress = varUser.Email
+        ).ID),
         
-        // Set visibility variable to true once script is complete.
-        UpdateContext({loc_visible: true});
+        Patch(
+            CsaSkillsNetworkRoster,
+            Defaults(CsaSkillsNetworkRoster),
+            {
+                Title: varUser.FullName,
+                EmailAddress: varUser.Email,
+                BusinessUnit: {Value: "not set"},
+                Country: {Value: "not set"}
+            }
+        )
+    );
+    // Load level choices into a collection.
+    ClearCollect(
+        col_levels,
+        ShowColumns(
+            CsaSkillsNetworkSkillLevels,
+            "Title"
+        )
+    );
+    // Load application choices into a collection.
+    ClearCollect(
+        col_applications,
+        RenameColumns(
+            ShowColumns(
+                CsaSkillsNetworkSkills,
+                "Title",
+                "Category"
+            ),
+            "Title",
+            "Application"
+        )
+    );
+    // Load application categories into a collection.
+    // Since this is a choice field, need to convert to a text field and then get distinct list.
+    // ClearCollect(col_category,{Category:"<show all>"});
+    ClearCollect(
+        col_category,
+        Sort(
+            RenameColumns(
+                Distinct(
+                    DropColumns(
+                        AddColumns(
+                            ShowColumns(
+                                CsaSkillsNetworkSkills,
+                                "Category"
+                            ),
+                            "Type",
+                            Category.Value
+                        ),
+                        "Category"
+                    ),
+                    Type
+                ),
+                "Result",
+                "Category"
+            ),
+            Category,
+            Ascending
+        )
+    );
+    // Load network levels into a collection.
+    ClearCollect(
+        col_network,
+        ShowColumns(
+            Filter(
+                CsaSkillsNetwork,
+                StaffEmail = varUser.Email
+            ),
+            "ID",
+            "Title",
+            "StaffEmail",
+            "UserLevel"
+        )
+    );
+    // Load full profile.
+    ClearCollect(
+        col_profile,
+        Ungroup(
+            AddColumns(
+                col_applications,
+                "myGroupedColumn",
+                Filter(
+                    col_network,
+                    Title = col_applications[@Application]
+                )
+            ),
+            "myGroupedColumn"
+        )
+    );
+    // Populate all blank values in the col_profile with "None"
+    UpdateIf(
+        col_profile,
+        IsBlank(UserLevel),
+        {UserLevel: "None"}
+    );
 
-    shp_background_splash As rectangle:
-        Fill: =RGBA(50, 51, 61, 1)
-        Height: =768
-        Width: =1366
-        ZIndex: =1
+    // Set visibility variable to true once script is complete.
+    UpdateContext({loc_visible: true});
 
-    shp_start_window_background_splash As rectangle:
-        BorderColor: =RGBA(37, 40, 47, 1)
-        Fill: =RGBA(37, 40, 47, 1)
-        Height: =600
-        Width: =700
-        X: =333
-        Y: =84.5
-        ZIndex: =2
+  shp_background_splash As rectangle:
+    Fill: =RGBA(50, 51, 61, 1)
+    Height: =768
+    Width: =1366
+    ZIndex: =1
 
-    lbl_app_version_splash As label:
-        Align: =Right
-        Color: =RGBA(252, 252, 252, 1)
-        Height: =23
-        Size: =8
-        Text: ="Alpha v0.2"
-        Width: =62
-        X: =1304
-        Y: =745
-        ZIndex: =4
+  shp_start_window_background_splash As rectangle:
+    BorderColor: =RGBA(37, 40, 47, 1)
+    Fill: =RGBA(37, 40, 47, 1)
+    Height: =600
+    Width: =700
+    X: =333
+    Y: =84.5
+    ZIndex: =2
 
-    img_app_spinner_splash As image:
-        Height: =150
-        Image: =Gray_circles_rotate
-        Visible: =!loc_visible
-        Width: =150
-        X: =611
-        Y: =404
-        ZIndex: =5
+  lbl_app_version_splash As label:
+    Align: =Right
+    Color: =RGBA(252, 252, 252, 1)
+    Height: =23
+    Size: =8
+    Text: ="Alpha v0.2"
+    Width: =62
+    X: =1304
+    Y: =745
+    ZIndex: =4
 
-    btn_app_start_splash As button:
-        AutoDisableOnSelect: =false
-        BorderStyle: =BorderStyle.None
-        Color: =RGBA(252, 252, 252, 1)
-        Fill: =RGBA(30, 185, 128, 1)
-        FontWeight: =Normal
-        Height: =56
-        HoverBorderColor: =RGBA(30, 185, 128, 1)
-        HoverFill: =ColorFade(RGBA(30, 185, 138, 100), -20%)
-        OnSelect: =Navigate(Home,ScreenTransition.None)
-        PressedBorderColor: =RGBA(0, 136, 83, 1)
-        RadiusBottomLeft: =0
-        RadiusBottomRight: =0
-        RadiusTopLeft: =0
-        RadiusTopRight: =0
-        Size: =24
-        Text: ="Start"
-        Visible: =loc_visible
-        Width: =700
-        X: =333
-        Y: =627
-        ZIndex: =6
+  img_app_spinner_splash As image:
+    Height: =150
+    Image: =Gray_circles_rotate
+    Visible: =!loc_visible
+    Width: =150
+    X: =611
+    Y: =404
+    ZIndex: =5
 
-    lbl_app_description_splash As label:
-        Align: =Center
-        Color: =RGBA(252, 252, 252, 1)
-        FontWeight: =Normal
-        Height: =45
-        Size: =11
-        Text: |-
-            ="
-            "
-        Width: =420
-        X: =476
-        Y: =308
-        ZIndex: =7
+  btn_app_start_splash As button:
+    AutoDisableOnSelect: =false
+    BorderStyle: =BorderStyle.None
+    Color: =RGBA(252, 252, 252, 1)
+    Fill: =RGBA(30, 185, 128, 1)
+    FontWeight: =Normal
+    Height: =56
+    HoverBorderColor: =RGBA(30, 185, 128, 1)
+    HoverFill: =ColorFade(RGBA(30, 185, 138, 100), -20%)
+    OnSelect: =Navigate(Home,ScreenTransition.None)
+    PressedBorderColor: =RGBA(0, 136, 83, 1)
+    RadiusBottomLeft: =0
+    RadiusBottomRight: =0
+    RadiusTopLeft: =0
+    RadiusTopRight: =0
+    Size: =24
+    Text: ="Start"
+    Visible: =loc_visible
+    Width: =700
+    X: =333
+    Y: =627
+    ZIndex: =6
 
-    lbl_title_app_welcome_splash As label:
-        Align: =Center
-        Color: =RGBA(252, 252, 252, 1)
-        FontWeight: =Normal
-        Height: =56
-        Size: =30
-        Text: ="CSA Skills Network"
-        Width: =697
-        X: =337
-        Y: =222
-        ZIndex: =8
+  lbl_app_description_splash As label:
+    Align: =Center
+    Color: =RGBA(252, 252, 252, 1)
+    FontWeight: =Normal
+    Height: =45
+    Size: =11
+    Text: |-
+      ="
+      "
+    Width: =420
+    X: =476
+    Y: =308
+    ZIndex: =7
 
-    img_app_icon_splash As image:
-        Height: =170
-        Image: =icon
-        Visible: =loc_visible
-        Width: =183
-        X: =594
-        Y: =321
-        ZIndex: =9
+  lbl_title_app_welcome_splash As label:
+    Align: =Center
+    Color: =RGBA(252, 252, 252, 1)
+    FontWeight: =Normal
+    Height: =56
+    Size: =30
+    Text: ="CSA Skills Network"
+    Width: =697
+    X: =337
+    Y: =222
+    ZIndex: =8
 
+  img_app_icon_splash As image:
+    Height: =170
+    Image: =icon
+    Visible: =loc_visible
+    Width: =183
+    X: =594
+    Y: =321
+    ZIndex: =9
