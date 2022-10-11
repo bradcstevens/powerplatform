@@ -7,7 +7,7 @@
   },
   "Properties": {
     "AppCreationSource": "AppFromScratch",
-    "AppDescription": "",
+    "AppDescription": "This app is a community-driven skills network for CSAs to spread awareness of their skills across Azure solution areas",
     "AppPreviewFlagsMap": {
       "aibuilderserviceenrollment": true,
       "allowmultiplescreensincanvaspages": false,
@@ -93,12 +93,12 @@
     "Id": "ebffdb54-bcc1-4ddd-aaba-dd594ce6ea47",
     "InstrumentationKey": "",
     "LocalDatabaseReferences": "{}",
-    "Name": "Office+365+Network.msapp",
+    "Name": "CSA Skills Network",
     "OriginatingVersion": "1.313"
   },
   "PublishInfo": {
     "AppName": "CSA Skills Network",
-    "BackgroundColor": "rgba(0, 176, 240, 1)",
+    "BackgroundColor": "rgba(50, 51, 61, 1)",
     "IconColor": "RGBA(255,255,255,1)",
     "IconName": "",
     "LogoFileName": "logo.jpg",
@@ -109,9 +109,6 @@
   },
   "ScreenOrder": [
     "Splash",
-    "Home",
-    "My_Profile",
-    "Staff_Profile",
-    "Request_Support"
+    "Home"
   ]
 }

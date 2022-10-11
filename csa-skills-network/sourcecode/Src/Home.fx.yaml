@@ -1,442 +1,1195 @@
 Home As screen:
-  OnVisible: =
+    OnVisible: =Set(var_lbl_welcome_visible, true);
 
-  img_background As image:
-    Height: =768
-    Image: ='GettyImages-1203720647'
-    Width: =1366
-    ZIndex: =1
-
-  lbl_app_title As label:
-    Fill: =RGBA(230, 230, 230, 0.5)
-    Height: =100
-    PaddingLeft: =175
-    Size: =32
-    Text: ="CSA Skills Network"
-    Width: =1366
-    Y: =95
-    ZIndex: =2
-
-  img_user_image As image:
-    BorderColor: =RGBA(255, 255, 255, 1)
-    BorderThickness: =2
-    Height: =75
-    Image: =varUser.Image
-    RadiusBottomLeft: =75
-    RadiusBottomRight: =75
-    RadiusTopLeft: =75
-    RadiusTopRight: =75
-    Width: =75
-    X: =1275
-    Y: =10
-    ZIndex: =3
-
-  lbl_user_info As label:
-    Align: =Right
-    Color: =RGBA(255, 255, 255, 1)
-    Height: =75
-    Text: |-
-      =varUser.FullName & "
-      " &
-      varUser.Email
-    Width: =369
-    X: =883
-    Y: =10
-    ZIndex: =4
-
-  btn_my_profile As button:
-    BorderThickness: =0
-    Color: =RGBA(0, 94, 146, 1)
-    Fill: =RGBA(237, 237, 237, 1)
-    OnSelect: |-
-      =If(
-          IsBlank(LookUp(
-              MatrixRoster,
-              EmailAddress = varUser.Email
-          ).ID),
-          
-          Patch(
-              MatrixRoster,
-              Defaults(MatrixRoster),
-              {
-                  Title: varUser.FullName,
-                  EmailAddress: varUser.Email,
-                  BusinessUnit: {Value: "not set"},
-                  Country: {Value: "not set"}
-              }
-          )
-      );
-      Set(
-          var_profile_visible,
-          true
-      );
-      ResetForm(frm_profile)
-    RadiusBottomLeft: =0
-    RadiusBottomRight: =0
-    RadiusTopLeft: =0
-    RadiusTopRight: =0
-    Text: ="My Profile"
-    Width: =200
-    X: =243
-    Y: =240
-    ZIndex: =5
-
-  btn_search_network As button:
-    BorderThickness: =0
-    Fill: =RGBA(0, 94, 146, 1)
-    OnSelect: =Navigate(Request_Support,ScreenTransition.None)
-    RadiusBottomLeft: =0
-    RadiusBottomRight: =0
-    RadiusTopLeft: =0
-    RadiusTopRight: =0
-    Text: ="Search Network"
-    Width: =200
-    X: =243
-    Y: =432
-    ZIndex: =6
-
-  btn_my_o365_skills As button:
-    BorderThickness: =0
-    Fill: =RGBA(0, 134, 208, 1)
-    OnSelect: =Navigate(My_Profile,ScreenTransition.None)
-    RadiusBottomLeft: =0
-    RadiusBottomRight: =0
-    RadiusTopLeft: =0
-    RadiusTopRight: =0
-    Text: ="My O365 Skills"
-    Width: =200
-    X: =243
-    Y: =297
-    ZIndex: =11
-
-  btn_search_by_staff As button:
-    BorderThickness: =0
-    Fill: =RGBA(0, 94, 146, 1)
-    OnSelect: =Navigate(Staff_Profile,ScreenTransition.None)
-    RadiusBottomLeft: =0
-    RadiusBottomRight: =0
-    RadiusTopLeft: =0
-    RadiusTopRight: =0
-    Text: ="Search by Staff"
-    Width: =200
-    X: =243
-    Y: =377
-    ZIndex: =12
-
-  shp_profile_background As rectangle:
-    Fill: =RGBA(230, 230, 230, 0.5)
-    Height: =573
-    Visible: =var_profile_visible
-    Width: =1366
-    Y: =195
-    ZIndex: =13
-
-  shp_frm_background As rectangle:
-    Fill: =RGBA(255, 255, 255, 1)
-    Height: =475
-    Visible: =var_profile_visible
-    Width: =450
-    X: =860
-    Y: =240
-    ZIndex: =14
-
-  lbl_form_title As label:
-    Align: =Left
-    BorderColor: =RGBA(0, 121, 187, 1)
-    FontWeight: =Semibold
-    Italic: =true
-    Size: =14
-    Text: ="My Profile"
-    Visible: =var_profile_visible
-    Width: =168
-    X: =883
-    Y: =257
-    ZIndex: =15
-
-  ico_cancel As icon.Cancel:
-    AccessibleLabel: ="Cancel profile edits"
-    Color: =RGBA(128, 128, 128, 1)
-    Height: =40
-    Icon: =Icon.Cancel
-    OnSelect: =ResetForm(frm_profile);Set(var_profile_visible, false)
-    TabIndex: =0
-    Tooltip: ="Cancel edits and close Profile box."
-    Visible: =var_profile_visible
-    Width: =40
-    X: =1255
-    Y: =257
-    ZIndex: =16
-
-  frm_profile As form:
-    AcceptsFocus: =false
-    DataSource: =MatrixRoster
-    Height: =357
-    Item: =LookUp(MatrixRoster,EmailAddress = varUser.Email)
-    NumberOfColumns: =1
-    OnSuccess: =Set(var_profile_visible, false)
-    Visible: =var_profile_visible
-    Width: =450
-    X: =860
-    Y: =308
-    ZIndex: =17
-
-    Title_DataCard3 As typedDataCard.textualViewCard:
-      BorderStyle: =BorderStyle.Solid
-      DataField: ="Title"
-      Default: =ThisItem.Title
-      DisplayMode: =DisplayMode.View
-      DisplayName: ="Name"
-      Fill: =RGBA(0, 0, 0, 0)
-      Height: =40
-      Required: =true
-      Width: =450
-      X: =0
-      Y: =0
-      ZIndex: =1
-
-      DataCardKey6 As label:
-        AutoHeight: =true
-        Color: =RGBA(0, 0, 0, 1)
-        Height: =34
-        PaddingLeft: =0
-        Text: =Parent.DisplayName
-        Width: =Parent.Width - 60
-        Wrap: =false
-        X: =30
-        Y: =10
+    shp_app_background As rectangle:
+        Fill: =RGBA(50, 51, 61, 1)
+        Height: =768
+        Width: =1366
         ZIndex: =1
 
-      DataCardValue6 As label:
-        AutoHeight: =true
-        Color: =RGBA(0, 134, 208, 1)
-        DisplayMode: =Parent.DisplayMode
-        Height: =27
-        PaddingLeft: =0
-        PaddingRight: =0
-        PaddingTop: =0
-        Text: =Parent.Default
-        Width: =Parent.Width - 60
-        X: =30
-        Y: =DataCardKey6.Y + DataCardKey6.Height + 5
+    lbl_app_version As label:
+        Align: =Right
+        Color: =RGBA(252, 252, 252, 1)
+        Height: =20
+        Size: =8
+        Text: ="Alpha v0.2"
+        Width: =62
+        X: =1304
+        Y: =748
         ZIndex: =2
 
-    EmailAddress_DataCard3 As typedDataCard.textualViewCard:
-      BorderStyle: =BorderStyle.Solid
-      DataField: ="EmailAddress"
-      Default: =ThisItem.EmailAddress
-      DisplayMode: =DisplayMode.View
-      DisplayName: ="EmailAddress"
-      Fill: =RGBA(0, 0, 0, 0)
-      Height: =40
-      Required: =false
-      Width: =450
-      X: =0
-      Y: =1
-      ZIndex: =1
+    app_banner As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =33
 
-      DataCardKey2 As label:
-        AutoHeight: =true
-        Color: =RGBA(0, 0, 0, 1)
-        Height: =34
-        PaddingLeft: =0
-        Text: =Parent.DisplayName
-        Width: =Parent.Width - 60
-        Wrap: =false
-        X: =30
-        Y: =10
-        ZIndex: =1
+        shp_app_banner As rectangle:
+            Fill: =RGBA(39, 39, 47, 1)
+            Height: =60
+            Width: =1366
+            ZIndex: =13
 
-      DataCardValue2 As label:
-        AutoHeight: =true
-        Color: =RGBA(0, 134, 208, 1)
-        DisplayMode: =Parent.DisplayMode
-        Height: =27
-        PaddingRight: =0
-        PaddingTop: =0
-        Text: =Parent.Default
-        Width: =Parent.Width - 60
-        X: =30
-        Y: =DataCardKey2.Y + DataCardKey2.Height + 5
-        ZIndex: =2
+        lbl_user_info_app_banner As label:
+            Align: =Right
+            Color: =RGBA(252, 252, 252, 1)
+            Height: =60
+            Size: =9
+            Text: |-
+                =varUser.FullName & "
+                " &
+                varUser.Email
+            Width: =422
+            X: =869
+            ZIndex: =14
 
-    Country_DataCard1 As typedDataCard.comboBoxEditCard:
-      BorderStyle: =BorderStyle.Solid
-      DataField: ="Country"
-      Default: =ThisItem.Country
-      DisplayMode: =Parent.DisplayMode
-      DisplayName: =DataSourceInfo([@MatrixRoster],DataSourceInfo.DisplayName,"Country")
-      Fill: =RGBA(0, 0, 0, 0)
-      Height: =50
-      Required: =true
-      Update: =DataCardValue1.Selected
-      Width: =450
-      X: =0
-      Y: =3
-      ZIndex: =1
+        img_user_app_banner As image:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderThickness: =3
+            Height: =42
+            Image: =varUser.Image
+            ImagePosition: =ImagePosition.Stretch
+            RadiusBottomLeft: =75
+            RadiusBottomRight: =75
+            RadiusTopLeft: =75
+            RadiusTopRight: =75
+            Width: =40
+            X: =1298
+            Y: =9
+            ZIndex: =15
 
-      DataCardKey1 As label:
-        AutoHeight: =true
-        Height: =34
-        Text: =Parent.DisplayName
-        Width: =Parent.Width - 60
-        Wrap: =false
-        X: =30
-        Y: =10
-        ZIndex: =1
+    app_menu As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =33
 
-      DataCardValue1 As combobox:
-        BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-        BorderThickness: =0
-        ChevronBackground: =RGBA(0, 134, 208, 1)
-        DefaultSelectedItems: =Parent.Default
-        DisplayFields: =["Value"]
-        DisplayMode: =Parent.DisplayMode
-        Fill: =RGBA(230, 230, 230, 1)
-        HoverFill: =RGBA(153, 207, 236, 1)
-        IsSearchable: =false
-        Items: =Choices([@MatrixRoster].Country)
-        PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
-        SearchFields: =["Value"]
-        SearchItems: =[]
-        SelectionFill: =RGBA(153, 207, 236, 1)
-        SelectMultiple: =false
-        Tooltip: =Parent.DisplayName
-        Width: =Parent.Width - 60
-        X: =30
-        Y: =DataCardKey1.Y + DataCardKey1.Height + 5
-        ZIndex: =2
+        shp_app_menu As rectangle:
+            Fill: =RGBA(37, 40, 47, 1)
+            Height: =768
+            ZIndex: =5
 
-      ErrorMessage1 As label:
-        AutoHeight: =true
-        Height: =10
-        Live: =Live.Assertive
-        PaddingBottom: =0
-        PaddingLeft: =0
-        PaddingRight: =0
-        PaddingTop: =0
-        Text: =Parent.Error
-        Visible: =Parent.DisplayMode=DisplayMode.Edit
-        Width: =Parent.Width - 60
-        X: =30
-        Y: =DataCardValue1.Y + DataCardValue1.Height
-        ZIndex: =3
+        img_app_icon_app_menu As image:
+            Height: =112
+            Image: =icon
+            OnSelect: |
+                =Set(
+                    var_lbl_welcome_visible,
+                    true
+                );
+                Set(
+                    var_profile_visible,
+                    false
+                );
+                Set(
+                    var_profile_icon_selected_visible,
+                    false
+                );
+                Set(
+                    var_skills_profile_visible,
+                    false
+                );
+                Set(
+                    var_edit_skills_icon_selected_visible,
+                    false
+                );
+                Set(
+                    var_search_visible,
+                    false
+                );
+                Set(
+                    var_search_icon_selected_visible,
+                    false
+                );
+            Width: =150
+            Y: =86
+            ZIndex: =6
 
-      StarVisible1 As label:
-        Align: =Align.Center
-        Height: =DataCardKey1.Height
-        Text: ="*"
-        Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-        Width: =30
-        Wrap: =false
-        Y: =DataCardKey1.Y
-        ZIndex: =4
+        img_unselected_edit_skills_app_menu As image:
+            Image: =fluent_person_edit_unselected
+            OnSelect: |-
+                =Set(var_profile_visible, false);
+                Set(
+                    var_img_selected_edit_skills_visible,
+                    true
+                );
+                Set(
+                    var_skills_profile_visible,
+                    true
+                );
+                Set(
+                    var_lbl_welcome_visible,
+                    false
+                );
+                Set(
+                    var_profile_icon_selected_visible,
+                    false
+                );
+                Set(
+                    var_search_icon_selected_visible, 
+                    false
+                    );
+                Set(
+                var_edit_skills_icon_selected_visible,
+                    true
+                );
+                Set(
+                    var_search_visible,
+                    false
+                );
+            X: =25
+            Y: =427
+            ZIndex: =7
 
-    BusinessUnit_DataCard1 As typedDataCard.comboBoxEditCard:
-      BorderStyle: =BorderStyle.Solid
-      DataField: ="BusinessUnit"
-      Default: =ThisItem.BusinessUnit
-      DisplayMode: =Parent.DisplayMode
-      DisplayName: ="Business Unit"
-      Fill: =RGBA(0, 0, 0, 0)
-      Height: =50
-      Required: =true
-      Update: =DataCardValue3.Selected
-      Width: =450
-      X: =0
-      Y: =2
-      ZIndex: =17
+        img_selected_edit_skills_app_menu As image:
+            Image: =ic_fluent_person_edit_24_filled
+            Visible: =var_edit_skills_icon_selected_visible
+            X: =25
+            Y: =427
+            ZIndex: =8
 
-      DataCardKey3 As label:
-        AutoHeight: =true
-        Color: =RGBA(0, 0, 0, 1)
-        Height: =34
-        PaddingLeft: =0
-        Text: =Parent.DisplayName
-        Width: =Parent.Width - 60
-        Wrap: =false
-        X: =30
-        Y: =10
-        ZIndex: =1
+        img_unselected_profile_app_menu As image:
+            HoverBorderColor: =
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Image: =ic_fluent_contact_card_24_filled_1
+            OnSelect: |-
+                =If(
+                    IsBlank(LookUp(
+                        MatrixRoster,
+                        EmailAddress = varUser.Email
+                    ).ID),
+                    
+                    Patch(
+                        MatrixRoster,
+                        Defaults(MatrixRoster),
+                        {
+                            Title: varUser.FullName,
+                            EmailAddress: varUser.Email,
+                            BusinessUnit: {Value: "not set"},
+                            Country: {Value: "not set"}
+                        }
+                    )
+                );
+                Set(
+                    var_profile_visible,
+                    true
+                );
+                Set(
+                    var_profile_icon_selected_visible,
+                    true
+                );
+                Set(
+                    var_skills_profile_visible,
+                    false
+                );
+                Set(
+                    var_search_icon_selected_visible, 
+                    false
+                );
+                Set(
+                var_edit_skills_icon_selected_visible,
+                    false
+                );
+                Set(
+                    var_search_visible,
+                    false
+                );
+                Set(var_lbl_welcome_visible, false);
+                ResetForm(frm_profile)
+            PressedBorderColor: =
+            PressedFill: =RGBA(0, 0, 0, 0)
+            X: =25
+            Y: =257
+            ZIndex: =9
 
-      DataCardValue3 As combobox:
-        AccessibleLabel: ="Enter your business unit"
-        BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-        BorderThickness: =0
-        ChevronBackground: =RGBA(0, 134, 208, 1)
-        DefaultSelectedItems: =Parent.Default
-        DisplayFields: =["Value"]
-        DisplayMode: =Parent.DisplayMode
-        Fill: =RGBA(237, 237, 237, 1)
-        HoverFill: =SkyBlue
-        IsSearchable: =false
-        Items: =Choices([@MatrixRoster].BusinessUnit)
-        PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
-        SearchFields: =["Value"]
-        SearchItems: =[]
-        SelectionFill: =RGBA(153, 207, 236, 1)
-        SelectMultiple: =false
-        Tooltip: =Parent.DisplayName
-        Width: =Parent.Width - 60
-        X: =30
-        Y: =DataCardKey3.Y + DataCardKey3.Height + 5
-        ZIndex: =2
+        img_selected_profile_app_menu As image:
+            Image: =ic_fluent_contact_card_24_filled
+            OnSelect: =
+            Visible: =var_profile_icon_selected_visible
+            X: =25
+            Y: =257
+            ZIndex: =10
 
-      ErrorMessage3 As label:
-        AutoHeight: =true
-        Height: =10
-        Live: =Live.Assertive
-        PaddingBottom: =0
-        PaddingLeft: =0
-        PaddingRight: =0
-        PaddingTop: =0
-        Text: =Parent.Error
-        Visible: =Parent.DisplayMode=DisplayMode.Edit
-        Width: =Parent.Width - 60
-        X: =30
-        Y: =DataCardValue3.Y + DataCardValue3.Height
-        ZIndex: =3
+        img_unselected_search_app_menu As image:
+            Image: =fluent_people_search_unselected
+            OnSelect: |-
+                =Set(var_profile_visible, false);
+                Set(
+                    var_search_icon_selected_visible, 
+                    true
+                );
+                Set(
+                    var_img_selected_edit_skills_visible,
+                    false
+                );
+                Set(
+                    var_skills_profile_visible,
+                    false
+                );
+                Set(
+                    var_lbl_welcome_visible,
+                    false
+                );
+                Set(
+                    var_profile_icon_selected_visible,
+                    false
+                );
+                Set(
+                var_edit_skills_icon_selected_visible,
+                false
+                );
+                Set(
+                    var_search_visible,
+                    true
+                );
+            X: =25
+            Y: =599
+            ZIndex: =11
 
-      StarVisible3 As label:
-        Align: =Align.Center
-        Height: =DataCardKey3.Height
-        Text: ="*"
-        Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-        Width: =30
-        Wrap: =false
-        Y: =DataCardKey3.Y
-        ZIndex: =4
+        img_selected_search_app_menu As image:
+            Image: =ic_fluent_people_search_24_filled
+            OnSelect: =
+            Visible: =var_search_icon_selected_visible
+            X: =25
+            Y: =599
+            ZIndex: =12
 
-  btn_save As button:
-    BorderThickness: =0
-    Fill: =RGBA(0, 134, 208, 1)
-    Height: =50
-    OnSelect: =SubmitForm(frm_profile)
-    RadiusBottomLeft: =0
-    RadiusBottomRight: =0
-    RadiusTopLeft: =0
-    RadiusTopRight: =0
-    Text: ="Save"
-    Tooltip: ="Save edits and close Profile box."
-    Visible: =var_profile_visible
-    Width: =225
-    X: =1085
-    Y: =665
-    ZIndex: =18
+    app_welcome As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =33
 
-  btn_cancel As button:
-    BorderThickness: =0
-    Color: =RGBA(0, 0, 0, 1)
-    Fill: =RGBA(204, 204, 204, 1)
-    Height: =50
-    OnSelect: =ResetForm(frm_profile);Set(var_profile_visible,false)
-    RadiusBottomLeft: =0
-    RadiusBottomRight: =0
-    RadiusTopLeft: =0
-    RadiusTopRight: =0
-    Text: ="Cancel"
-    Tooltip: ="Cancel edits and close Profile box."
-    Visible: =var_profile_visible
-    Width: =225
-    X: =860
-    Y: =665
-    ZIndex: =19
+        lbl_title_app_welcome As label:
+            Align: =Center
+            Color: =RGBA(252, 252, 252, 1)
+            FontWeight: =Normal
+            Height: =96
+            Size: =32
+            Text: ="Welcome to the CSA Skills Network"
+            Visible: =var_lbl_welcome_visible
+            Width: =850
+            X: =295
+            Y: =281
+            ZIndex: =3
+
+        lbl_description_app_welcome As label:
+            Align: =Center
+            Color: =RGBA(252, 252, 252, 1)
+            FontWeight: =Normal
+            Height: =37
+            Size: =13.5
+            Text: |-
+                ="This app is a community-driven skills network for CSAs to spread awareness of their skills across Azure solution areas
+                "
+            Visible: =var_lbl_welcome_visible
+            Width: =612
+            X: =421
+            Y: =378
+            ZIndex: =4
+
+    edit_profile As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =33
+
+        shp_background_frm_profile As rectangle:
+            DisabledFill: =
+            Fill: =RGBA(37, 40, 47, 1)
+            Height: =571
+            HoverFill: =
+            PressedFill: =
+            Visible: =var_profile_visible
+            Width: =1122
+            X: =197
+            Y: =133
+            ZIndex: =38
+
+        frm_profile As form:
+            AcceptsFocus: =false
+            DataSource: =MatrixRoster
+            Height: =404
+            Item: =LookUp(MatrixRoster,EmailAddress = varUser.Email)
+            NumberOfColumns: =1
+            OnSuccess: =Set(var_profile_visible, false)
+            Visible: =var_profile_visible
+            Width: =1122
+            X: =197
+            Y: =155
+            ZIndex: =39
+
+            card_title_frm_profile As typedDataCard.textualViewCard:
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="Title"
+                Default: =ThisItem.Title
+                DisplayMode: =DisplayMode.View
+                DisplayName: ="Name"
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =40
+                Required: =true
+                Width: =1122
+                X: =0
+                Y: =0
+                ZIndex: =1
+
+                DataCardKey6 As label:
+                    Color: =RGBA(255, 255, 255, 1)
+                    FontWeight: =Semibold
+                    Height: =25
+                    PaddingLeft: =0
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =4
+                    ZIndex: =1
+
+                DataCardValue6 As label:
+                    AutoHeight: =true
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisplayMode: =Parent.DisplayMode
+                    Height: =27
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Default
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey6.Y + DataCardKey6.Height + 5
+                    ZIndex: =2
+
+            card_email_frm_profile As typedDataCard.textualViewCard:
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="EmailAddress"
+                Default: =ThisItem.EmailAddress
+                DisplayMode: =DisplayMode.View
+                DisplayName: ="EmailAddress"
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =71
+                Required: =false
+                Width: =1122
+                X: =0
+                Y: =1
+                ZIndex: =1
+
+                DataCardKey2 As label:
+                    AutoHeight: =true
+                    Color: =RGBA(255, 255, 255, 1)
+                    FontWeight: =Semibold
+                    Height: =34
+                    PaddingLeft: =0
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue2 As label:
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisplayMode: =Parent.DisplayMode
+                    Height: =27
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Default
+                    Width: =410
+                    X: =26
+                    Y: =44
+                    ZIndex: =2
+
+            card_country_frm_profile As typedDataCard.comboBoxEditCard:
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="Country"
+                Default: =ThisItem.Country
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@MatrixRoster],DataSourceInfo.DisplayName,"Country")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                Required: =true
+                Update: =DataCardValue1.Selected
+                Width: =1122
+                X: =0
+                Y: =3
+                ZIndex: =1
+
+                DataCardKey1 As label:
+                    AutoHeight: =true
+                    Color: =RGBA(252, 252, 252, 1)
+                    FontWeight: =Semibold
+                    Height: =34
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue1 As combobox:
+                    BorderColor: =
+                    BorderThickness: =0
+                    ChevronBackground: =RGBA(30, 185, 128, 1)
+                    ChevronHoverBackground: =RGBA(0, 0, 0, 0)
+                    DefaultSelectedItems: =Parent.Default
+                    DisplayFields: =["Value"]
+                    DisplayMode: =Parent.DisplayMode
+                    Fill: =RGBA(230, 230, 230, 1)
+                    HoverBorderColor: =
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    IsSearchable: =false
+                    Items: =Choices([@MatrixRoster].Country)
+                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                    PressedBorderColor: =
+                    PressedColor: =RGBA(0, 0, 0, 1)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    SearchFields: =["Value"]
+                    SearchItems: =[]
+                    SelectionColor: =RGBA(252, 252, 252, 1)
+                    SelectionFill: =ColorFade(RGBA(30, 185, 128, 100), -20%)
+                    SelectMultiple: =false
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey1.Y + DataCardKey1.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage1 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue1.Y + DataCardValue1.Height
+                    ZIndex: =3
+
+                StarVisible1 As label:
+                    Align: =Align.Center
+                    Color: =RGBA(253, 65, 133, 1)
+                    Height: =DataCardKey1.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey1.Y
+                    ZIndex: =4
+
+            card_business_unit_frm_profile As typedDataCard.comboBoxEditCard:
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="BusinessUnit"
+                Default: =ThisItem.BusinessUnit
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: ="Business Unit"
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                Required: =true
+                Update: =DataCardValue3.Selected
+                Width: =1122
+                X: =0
+                Y: =2
+                ZIndex: =17
+
+                DataCardKey3 As label:
+                    AutoHeight: =true
+                    Color: =RGBA(252, 252, 252, 1)
+                    FontWeight: =Semibold
+                    Height: =34
+                    PaddingLeft: =0
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue3 As combobox:
+                    AccessibleLabel: ="Enter your business unit"
+                    BorderColor: =
+                    BorderThickness: =0
+                    ChevronBackground: =RGBA(30, 185, 128, 1)
+                    ChevronDisabledBackground: =RGBA(0, 0, 0, 0)
+                    ChevronHoverBackground: =RGBA(0, 0, 0, 0)
+                    ChevronHoverFill: =RGBA(0, 0, 0, 0)
+                    DefaultSelectedItems: =Parent.Default
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(0, 0, 0, 1)
+                    DisplayFields: =["Value"]
+                    DisplayMode: =Parent.DisplayMode
+                    Fill: =RGBA(237, 237, 237, 1)
+                    HoverBorderColor: =
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    IsSearchable: =false
+                    Items: =Choices([@MatrixRoster].BusinessUnit)
+                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    SearchFields: =["Value"]
+                    SearchItems: =[]
+                    SelectionColor: =RGBA(252, 252, 252, 1)
+                    SelectionFill: =ColorFade(RGBA(30, 185, 128, 100), -20%)
+                    SelectMultiple: =false
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey3.Y + DataCardKey3.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage3 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue3.Y + DataCardValue3.Height
+                    ZIndex: =3
+
+                StarVisible3 As label:
+                    Align: =Align.Center
+                    Color: =RGBA(253, 65, 133, 1)
+                    Height: =DataCardKey3.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey3.Y
+                    ZIndex: =4
+
+        btn_save_frm_profile As button:
+            BorderThickness: =0
+            Fill: =RGBA(30, 185, 128, 1)
+            Height: =64
+            HoverFill: =ColorFade(RGBA(30, 185, 128, 100), -20%)
+            OnSelect: |-
+                =SubmitForm(frm_profile);Set(var_profile_icon_selected_visible, false);
+                Set(var_lbl_welcome_visible, true);
+            PressedColor: =
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Text: ="Save"
+            Tooltip: ="Save edits and close Profile box."
+            Visible: =var_profile_visible
+            Width: =561
+            X: =758
+            Y: =641
+            ZIndex: =40
+
+        btn_cancel_frm_profile As button:
+            BorderThickness: =0
+            Color: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(204, 204, 204, 1)
+            Height: =64
+            HoverFill: =ColorFade(RGBA(204, 204, 204, 100), -20%)
+            OnSelect: |-
+                =ResetForm(frm_profile);Set(var_profile_visible,false);Set(var_profile_icon_selected_visible, false);
+                Set(var_lbl_welcome_visible, true);
+            PressedFill: =
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Text: ="Cancel"
+            Tooltip: ="Cancel edits and close Profile box."
+            Visible: =var_profile_visible
+            Width: =561
+            X: =197
+            Y: =641
+            ZIndex: =41
+
+        lbl_title_frm_profile As label:
+            Align: =Left
+            BorderColor: =RGBA(0, 121, 187, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =Semibold
+            Height: =60
+            Size: =20
+            Text: ="My Profile"
+            Visible: =var_profile_visible
+            Width: =268
+            X: =197
+            Y: =73
+            ZIndex: =42
+
+    edit_skills As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =44
+
+        shp_background_edit_skills As rectangle:
+            Fill: =RGBA(37, 40, 47, 1)
+            Height: =394
+            Visible: =var_skills_profile_visible
+            Width: =1122
+            X: =197
+            Y: =310
+            ZIndex: =27
+
+        "gal_edit_skills As gallery.'BrowseLayout_Vertical_OneTextVariant_ver4.0'":
+            AccessibleLabel: ="Gallery list of applications and user's skills for editing"
+            BorderColor: =RGBA(0, 0, 0, 0)
+            Height: =301
+            Items: |-
+                =If(
+                    dd_solution_area_edit_skills.Selected.Value = "All",
+                    Sort(
+                        col_profile,
+                        "Solution Area",
+                        Ascending
+                    ),
+                    Sort(
+                        Filter(
+                            col_profile,
+                            Category.Value = dd_solution_area_edit_skills.Selected.Value
+                        ),
+                        "Solution Area",
+                        Ascending
+                    )
+                )
+            Layout: =Layout.Vertical
+            TabIndex: =0
+            TemplatePadding: =0
+            TemplateSize: =57
+            Visible: =var_skills_profile_visible
+            Width: =1122
+            X: =197
+            Y: =310
+            ZIndex: =28
+
+            lbl_skill_gal_edit_skills As label:
+                Color: =RGBA(255, 255, 255, 1)
+                FontWeight: =Semibold
+                Height: =25
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =13
+                Text: =ThisItem.Application
+                VerticalAlign: =VerticalAlign.Top
+                Width: =300
+                X: =400
+                Y: =24
+                ZIndex: =1
+
+            sep_gal_edit_skills As rectangle:
+                Fill: =RGBA(179, 179, 179, 1)
+                Height: =0
+                OnSelect: =Select(Parent)
+                Width: =Parent.TemplateWidth
+                Y: =Parent.TemplateHeight - 1
+                ZIndex: =2
+
+            dd_level_gal_edit_skills As dropdown:
+                AccessibleLabel: ="Edit user's current level"
+                BorderColor: =RGBA(30, 185, 128, 1)
+                BorderThickness: =0
+                ChevronBackground: =ColorFade(RGBA(30, 185, 128, 100), -20%)
+                ChevronHoverBackground: =ColorFade(RGBA(30, 185, 128, 100), -20%)
+                Default: =ThisItem.UserLevel
+                Fill: =RGBA(252, 252, 252, 1)
+                FontWeight: =Semibold
+                Height: =30
+                HoverFill: =RGBA(230, 230, 230, 1)
+                Items: =col_levels.Title
+                OnChange: |-
+                    =If(
+                        IsBlank(ThisItem.ID),
+                        Patch(
+                            MatrixNetwork,
+                            Defaults(MatrixNetwork),
+                            {Title: ThisItem.Application,
+                            StaffEmail: varUser.Email,
+                            UserLevel: dd_level_gal_edit_skills.Selected.Title}
+                        ),
+                        Patch(
+                            MatrixNetwork,
+                            LookUp(MatrixNetwork, ID = ThisItem.ID),
+                            {UserLevel: dd_level_gal_edit_skills.Selected.Title}
+                        )
+                    );
+                    
+                    
+                    // Load network levels into a collection.
+                    ClearCollect(col_network, ShowColumns(Filter(MatrixNetwork,StaffEmail = varUser.Email),"ID","Title","StaffEmail","UserLevel"));
+                    
+                    // Load full profile.
+                    ClearCollect(col_profile,
+                            Ungroup(
+                                AddColumns(
+                                    col_applications,
+                                    "myGroupedColumn",
+                                    Filter(
+                                        col_network,
+                                        Title=col_applications[@Application]
+                                    )
+                                ),
+                             "myGroupedColumn")
+                    );
+                    
+                    // Populate all blank values in the col_profile with "None"
+                    UpdateIf(col_profile,IsBlank(UserLevel),{UserLevel: "None"});
+                OnSelect: =Select(Parent)
+                PressedFill: =RGBA(30, 185, 128, 1)
+                SelectionColor: =RGBA(252, 252, 252, 1)
+                SelectionFill: =ColorFade(RGBA(30, 185, 128, 100), -20%)
+                Size: =12
+                Width: =200
+                X: =798
+                Y: =18
+                ZIndex: =3
+
+            lbl_solution_area_gal_edit_skills As label:
+                Color: =RGBA(255, 255, 255, 1)
+                FontWeight: =Semibold
+                Height: =25
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =13
+                Text: =ThisItem.Category.Value
+                VerticalAlign: =VerticalAlign.Bottom
+                Width: =149
+                X: =27
+                Y: =20
+                ZIndex: =5
+
+        lbl_screen_name_edit_skills As label:
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =Semibold
+            Height: =46
+            Size: =20
+            Text: ="My Skills Profile"
+            Visible: =var_skills_profile_visible
+            Width: =350
+            X: =197
+            Y: =82
+            ZIndex: =29
+
+        lbl_description_edit_skills As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =27
+            Size: =12
+            Text: ="For each skill listed below, rank your current skill level"
+            VerticalAlign: =VerticalAlign.Top
+            Visible: =var_skills_profile_visible
+            Width: =446
+            X: =877
+            Y: =104
+            ZIndex: =30
+
+        dd_solution_area_edit_skills As dropdown:
+            AccessibleLabel: ="Filter application list by category"
+            BorderColor: =RGBA(39, 39, 47, 1)
+            BorderThickness: =0
+            ChevronBackground: =ColorFade(RGBA(30, 185, 128, 100), -20%)
+            ChevronDisabledBackground: =RGBA(30, 185, 128, 1)
+            ChevronHoverBackground: =
+            Fill: =RGBA(252, 252, 252, 1)
+            FontWeight: =Semibold
+            HoverFill: =RGBA(230, 230, 230, 1)
+            Items: =["All","Azure Core","App Innovation","Data & AI","Security","Other"]
+            PressedFill: =RGBA(30, 185, 128, 1)
+            SelectionFill: |
+                =ColorFade(RGBA(30, 185, 128, 100), -20%)
+            Size: =12
+            Visible: =var_skills_profile_visible
+            Width: =240
+            X: =205
+            Y: =202
+            ZIndex: =31
+
+        lbl_my_current_skill_lvl_edit_skills As label:
+            Color: =RGBA(252, 252, 252, 1)
+            FontWeight: =Semibold
+            Height: =52
+            Size: =16
+            Text: ="My Current Skill Level"
+            Visible: =var_skills_profile_visible
+            Width: =268
+            X: =958
+            Y: =253
+            ZIndex: =32
+
+        lbl_solution_area_edit_skills As label:
+            Align: =Align.Center
+            Color: =RGBA(252, 252, 252, 1)
+            FontWeight: =Semibold
+            Size: =16
+            Text: ="Solution Area"
+            Visible: =var_skills_profile_visible
+            Width: =168
+            X: =206
+            Y: =270
+            ZIndex: =33
+
+        lbl_skill_edit_skills As label:
+            Align: =Align.Center
+            Color: =RGBA(252, 252, 252, 1)
+            FontWeight: =Semibold
+            Height: =50
+            Size: =16
+            Text: ="Skill"
+            Visible: =var_skills_profile_visible
+            Width: =90
+            X: =603
+            Y: =263
+            ZIndex: =34
+
+        btn_cancel_edit_skills As button:
+            BorderThickness: =0
+            Color: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(204, 204, 204, 1)
+            Height: =64
+            HoverFill: =ColorFade(RGBA(204, 204, 204, 100), -20%)
+            OnSelect: |-
+                =Set(var_skills_profile_visible,false);Set(var_profile_icon_selected_visible, false);
+                Set(var_edit_skills_icon_selected_visible, false);
+                Set(var_lbl_welcome_visible, true);
+            PressedFill: =
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Text: ="Cancel"
+            Tooltip: ="Cancel edits and close Profile box."
+            Visible: |
+                =var_skills_profile_visible
+            Width: =561
+            X: =197
+            Y: =640
+            ZIndex: =35
+
+        btn_save_edit_skills As button:
+            BorderThickness: =0
+            Fill: =RGBA(30, 185, 128, 1)
+            Height: =64
+            HoverFill: =ColorFade(RGBA(30, 185, 128, 100), -20%)
+            OnSelect: |-
+                =Set(var_skills_profile_visible,false);
+                Set(var_profile_icon_selected_visible, false);
+                Set(var_edit_skills_icon_selected_visible, false);
+                Set(var_lbl_welcome_visible, true);
+            PressedColor: =
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Text: ="Save"
+            Tooltip: ="Save edits and close Profile box."
+            Visible: =var_skills_profile_visible
+            Width: =561
+            X: =758
+            Y: =640
+            ZIndex: =36
+
+        lbl_filter_by_solution_area_edit_skills As label:
+            Align: =Left
+            BorderColor: =RGBA(0, 121, 187, 1)
+            Color: =RGBA(252, 252, 252, 1)
+            FontWeight: =Semibold
+            Height: =37
+            Size: =16
+            Text: ="Filter by Solution Area"
+            Visible: |
+                =var_skills_profile_visible
+            Width: =245
+            X: =202
+            Y: =158
+            ZIndex: =37
+
+    search As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =44
+
+        lbl_screen_title_search As label:
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =Semibold
+            Height: =50
+            Size: =20
+            Text: ="Search CSA Skills"
+            Visible: |
+                =var_search_visible
+            Width: =380
+            X: =197
+            Y: =82
+            ZIndex: =16
+
+        lbl_screen_description_search As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =32
+            Size: =12
+            Text: ="Search by Skill Levels and Skills to see CSA results"
+            VerticalAlign: =VerticalAlign.Top
+            Visible: |
+                =var_search_visible
+            Width: =386
+            X: =943
+            Y: =104
+            ZIndex: =17
+
+        "gal_search As gallery.'BrowseLayout_Vertical_OneTextVariant_ver4.0'":
+            AccessibleLabel: ="List of user's profile/skills (read only)"
+            BorderColor: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(37, 40, 47, 1)
+            Height: =384
+            Items: |-
+                =Sort(
+                    Filter(
+                        MatrixNetwork, 
+                        UserLevel in cbo_level_search.SelectedItems.Title || IsBlank(cbo_level_search.Selected.Title),
+                        Title in cbo_app_search.SelectedItems.Title || IsBlank(cbo_app_search.Selected.Title)
+                    ),
+                    StaffEmail = StaffEmail,
+                    Ascending
+                )
+            Layout: =Layout.Vertical
+            TabIndex: =0
+            TemplatePadding: =0
+            TemplateSize: =60
+            Visible: |
+                =var_search_visible
+            Width: =1122
+            X: =197
+            Y: =310
+            ZIndex: =18
+
+            sep_gal_search As rectangle:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =1
+                OnSelect: =Select(Parent)
+                Width: =Parent.TemplateWidth
+                Y: =Parent.TemplateHeight - 1
+                ZIndex: =3
+
+            lbl_skill_level_gal_search As label:
+                Align: =Center
+                Color: =RGBA(252, 252, 252, 1)
+                Fill: |-
+                    =If(IsBlank(lbl_skill_level_gal_search.Text), RGBA(0, 0, 0, 0),
+                      If(lbl_skill_level_gal_search.Text = "None", RGBA(30, 185, 128, 100),
+                        If(lbl_skill_level_gal_search.Text = "Foundational", ColorFade(RGBA(30, 185, 128, 100), 0%),
+                          If(lbl_skill_level_gal_search.Text = "Intermediate", ColorFade(RGBA(30, 185, 128, 100), -40%),
+                            If(lbl_skill_level_gal_search.Text = "Expert", ColorFade(RGBA(30, 185, 128, 100), -65%)
+                            )
+                          )
+                        )
+                      )
+                    )
+                FontWeight: =Semibold
+                Height: =30
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =10
+                Text: =ThisItem.UserLevel
+                Width: =125
+                X: =470
+                Y: =15
+                ZIndex: =4
+
+            lbl_skill_gal_search As label:
+                Color: =RGBA(255, 255, 255, 1)
+                FontWeight: =Semibold
+                Height: =26
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =13
+                Text: =ThisItem.Title
+                Width: =223
+                X: =219
+                Y: =18
+                ZIndex: =5
+
+            lbl_solution_area_gal_search As label:
+                Color: =RGBA(255, 255, 255, 1)
+                FontWeight: =Semibold
+                Height: =25
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =13
+                Text: =LookUp(MatrixApplication,Title = ThisItem.Title,Category.Value)
+                X: =27
+                Y: =20
+                ZIndex: =7
+
+            lbl_csa_email_gal_search As label:
+                Color: =RGBA(255, 255, 255, 1)
+                FontWeight: =Semibold
+                Height: =44
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =12
+                Text: =ThisItem.StaffEmail
+                Width: =411
+                X: =631
+                Y: =8
+                ZIndex: =8
+
+        lbl_skill_search As label:
+            Align: =Left
+            BorderColor: =RGBA(0, 121, 187, 1)
+            Color: =RGBA(252, 252, 252, 1)
+            FontWeight: =Semibold
+            Size: =16
+            Text: ="Skill"
+            Visible: |
+                =var_search_visible
+            Width: =63
+            X: =410
+            Y: =270
+            ZIndex: =19
+
+        lbl_solution_area_search As label:
+            Align: =Left
+            BorderColor: =RGBA(0, 121, 187, 1)
+            Color: =RGBA(252, 252, 252, 1)
+            FontWeight: =Semibold
+            Size: =16
+            Text: ="Solution Area"
+            Visible: |
+                =var_search_visible
+            Width: =168
+            X: =216
+            Y: =270
+            ZIndex: =20
+
+        lbl_skill_level_search As label:
+            Align: =Left
+            BorderColor: =RGBA(0, 121, 187, 1)
+            Color: =RGBA(252, 252, 252, 1)
+            FontWeight: =Semibold
+            Size: =16
+            Text: ="Skill Level"
+            Visible: |
+                =var_search_visible
+            Width: =129
+            X: =663
+            Y: =270
+            ZIndex: =21
+
+        cbo_app_search As combobox:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderThickness: =0
+            ChevronBackground: =ColorFade(RGBA(30, 185, 128, 1), -20%)
+            ChevronFill: =RGBA(252, 252, 252, 1)
+            ChevronHoverBackground: =ColorFade(RGBA(30, 185, 128, 100), -20%)
+            DisplayFields: =["Title"]
+            HoverColor: =RGBA(252, 252, 252, 1)
+            HoverFill: =ColorFade(RGBA(30, 185, 128, 1), -20%)
+            InputTextPlaceholder: ="Select one or more skills"
+            Items: =MatrixApplication.Title
+            OnChange: =
+            PressedFill: =RGBA(30, 185, 128, 1)
+            SearchFields: =["Title"]
+            SearchItems: =Search(MatrixApplication.Title,cbo_app_search.SearchText,"Title")
+            SelectionColor: =RGBA(252, 252, 252, 1)
+            SelectionFill: =ColorFade(RGBA(30, 185, 128, 100), -20%)
+            Visible: =var_search_visible
+            Width: =682
+            X: =633
+            Y: =201
+            ZIndex: =22
+
+        cbo_level_search As combobox:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderThickness: =0
+            ChevronBackground: =ColorFade(RGBA(30, 185, 128, 1), -20%)
+            ChevronHoverBackground: =ColorFade(RGBA(30, 185, 128, 100), -20%)
+            ChevronHoverFill: =RGBA(252, 252, 252, 1)
+            DisplayFields: =["Title"]
+            HoverColor: =RGBA(252, 252, 252, 1)
+            HoverFill: =ColorFade(RGBA(30, 185, 128, 1), -20%)
+            InputTextPlaceholder: ="Select one or more levels"
+            Items: =MatrixLevel.Title
+            OnChange: =
+            PressedFill: =RGBA(30, 185, 128, 1)
+            SearchFields: =["Title"]
+            SearchItems: =Search(MatrixLevel.Title,cbo_level_search.SearchText,"Title")
+            SelectionColor: =RGBA(252, 252, 252, 1)
+            SelectionFill: =ColorFade(RGBA(30, 185, 128, 100), -20%)
+            Visible: =var_search_visible
+            Width: =354
+            X: =205
+            Y: =202
+            ZIndex: =23
+
+        lbl_csa_email_search As label:
+            Align: =Left
+            BorderColor: =RGBA(0, 121, 187, 1)
+            Color: =RGBA(252, 252, 252, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =35
+            Size: =16
+            Text: ="CSA Email"
+            Visible: |
+                =var_search_visible
+            Width: =128
+            X: =823
+            Y: =270
+            ZIndex: =24
+
+        lbl_filter_by_skill_level_search As label:
+            Align: =Left
+            BorderColor: =RGBA(0, 121, 187, 1)
+            Color: =RGBA(252, 252, 252, 1)
+            FontWeight: =Semibold
+            Height: =37
+            Size: =16
+            Text: ="Filter by Skill Level"
+            Visible: |
+                =var_search_visible
+            Width: =204
+            X: =205
+            Y: =158
+            ZIndex: =25
+
+        lbl_filter_by_skill_search As label:
+            Align: =Left
+            BorderColor: =RGBA(0, 121, 187, 1)
+            Color: =RGBA(252, 252, 252, 1)
+            FontWeight: =Semibold
+            Height: =37
+            Size: =16
+            Text: ="Filter by Skill"
+            Visible: |
+                =var_search_visible
+            Width: =204
+            X: =633
+            Y: =158
+            ZIndex: =26
+
